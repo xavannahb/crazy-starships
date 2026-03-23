@@ -1,1 +1,68 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #181932;
+    color: white;
+}
 
+
+
+
+
+/* MARK: Satelliet */
+.satellite {
+    position: relative;
+    width: 100vw; /*MOET HIER CUSTOM PROPERTY VOOR DOEN */
+    height: 100vh; /*MOET HIER CUSTOM PROPERTY VOOR DOEN */
+}
+
+img {
+    position: absolute;
+    width: 300px;
+    left: 40%;
+    top: 30%;
+    animation: opNeer 1s ease infinite;
+}
+
+@keyframes opNeer {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-40px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes naarRechts {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(300px);
+    }
+}
+
+
+
+
+
+/* MARK: Tekst mission */
+.tekst {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    width: 40%;
+
+    opacity: 0;
+    animation: tevoorschijn 1s ease forwards;
+    animation-delay: 3s;
+}
+
+@keyframes tevoorschijn {
+    to {
+        opacity: 1;
+    }
+}
