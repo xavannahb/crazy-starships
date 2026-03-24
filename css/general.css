@@ -1,3 +1,5 @@
+@import url("walle.css");
+
 :root {
     /* colors */
     --background-blue: #001329;
@@ -18,27 +20,3 @@ body {
     background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
     background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 }
-
-
-.flying {
-    position: fixed;
-    right: 0;
-    bottom: 150px;
-    animation: goingUp 6s linear infinite,
-                delay-animation 20s linear infinite;
-}
-
-.flying img {
-    width: clamp(100px, 20vw, 200px);
-}
-
-@keyframes goingUp {
-    from {
-        transform: translateY(120vh);
-    }
-    to {
-        transform: translateY(-120vh);
-    }
-}
-
-@keyframes
