@@ -42,7 +42,7 @@ body {
     width: var(--logo-width);
     padding-inline: var(--logo-padding);
     z-index: 1000;
-    animation-name: logoRechts;
+    animation-name: logoRight;
     animation-timeline: scroll();
 }
 
@@ -53,7 +53,7 @@ body {
     opacity: var(--logo-opacity);
 }
 
-@keyframes logoRechts {
+@keyframes logoRight {
     from {
         transform: translateX(0);
     }
