@@ -30,11 +30,17 @@ body {
 
 
 
+:root {
+    --logo-width: 150px;
+    --logo-padding: 2rem;
+    --logo-opacity: 0.3;
+}
+
 .logo {
     position: fixed;
     left: 0;
-    width: 150px;
-    padding-inline: 2rem;
+    width: var(--logo-width);
+    padding-inline: var(--logo-padding);
     z-index: 1000;
     animation-name: logoRechts;
     animation-timeline: scroll();
@@ -44,7 +50,7 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    opacity: 0.3;
+    opacity: var(--logo-opacity);
 }
 
 @keyframes logoRechts {
@@ -52,7 +58,7 @@ body {
         transform: translateX(0);
     }
     to {
-        transform: translateX(calc(100vw - 150px));
+        transform: translateX(calc(100vw - var(--logo-width)));
         /* transform: rotate(40deg); */
     }
 }
