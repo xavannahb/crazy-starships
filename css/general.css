@@ -1,6 +1,25 @@
+@import url("logo.css");
 @import url("mission.css");
-
 @import url(student-showcase.css);
+
+@font-face {
+    font-family:"Space_Grotesk";
+    src: url("../fonts/Space_Grotesk/Space_Grotesk/");
+}
+
+@font-face {
+    font-family:"Roboto";
+    src: url("../fonts/Roboto/Roboto/");
+}
+
+@font-face {
+    font-family:"Space_Mono";
+    src: url("../fonts/Space_Mono/Space_Mono/");
+}
+
+* {
+    box-sizing: border-box;
+}
 
 :root {
     /* colors */
@@ -22,4 +41,19 @@ body {
     background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
     background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 }
+
+h1 h2 {
+    font-family: "Space_Grotesk";
+}
+
+
+h3 {
+    font-family: "Roboto";
+}
+
+
+p {
+    font-family: "Space_Mono";
+}
+
 
