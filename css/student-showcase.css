@@ -1,0 +1,149 @@
+:root {
+  /* TODO remove when in main branch */
+  --star-color: #eb5d34;
+  --trail-color: white;
+  --background-blue: #001329;
+}
+
+body {
+  background-color: var(--background-blue);
+  margin: 0;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 64px;
+}
+
+h1 {
+  color: white;
+}
+
+.spiral-container {
+  width: calc(min(0.7 * (100vw / 400px), 0.7 * (100vh / 400px)) * 400px);
+  height: calc(min(0.7 * (100vw / 400px), 0.7 * (100vh / 400px)) * 390px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spiral {
+  position: relative;
+  width: 400px;
+  scale: calc(min(0.7 * (100vw / 400px), 0.7 * (100vh / 400px)));
+  overflow: hidden;
+  padding: 32px;
+
+  & svg {
+    animation: rotate 8s linear infinite;
+  }
+
+  & path {
+    stroke-linecap: "round";
+    stroke-linejoin: "round";
+    stroke-miterlimit: "10";
+    stroke-width: 0.5px;
+    fill: transparent;
+    stroke: rgb(255 255 255 / 0.25);
+    paint-order: "fill stroke markers";
+  }
+}
+
+.hole {
+  width: 20%;
+  height: 20%;
+  background-color: black;
+  z-index: 10;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:
+    0 0 10px black,
+    0 0 20px black,
+    0 0 30px black;
+}
+
+/* dots */
+.dots {
+  position: absolute;
+}
+
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background-color: var(--trail-color);
+
+  offset-rotate: auto;
+  offset-distance: 0%;
+  animation-name: moveAlong;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+
+  animation-duration: var(--duration, 2000ms);
+  animation-delay: var(--delay, 0s);
+}
+
+.dot:first-of-type {
+  background-color: var(--star-color);
+  box-shadow:
+    0 0 5px var(--star-color),
+    0 0 5px var(--star-color),
+    0 0 5px var(--star-color);
+}
+
+.student .dot {
+  background-color: var(--star-color);
+}
+
+.student .dot:first-of-type {
+  background-image: url(student.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 10;
+  offset-rotate: 0deg;
+
+  &::after {
+    content: var(--label);
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    white-space: nowrap;
+  }
+}
+
+@keyframes moveAlong {
+  0% {
+  }
+
+  80% {
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 359deg;
+  }
+}
