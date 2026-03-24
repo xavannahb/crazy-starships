@@ -1,4 +1,6 @@
 @import url("logo.css");
+@import url("mission.css");
+@import url(student-showcase.css);
 
 @font-face {
     font-family:"Space_Grotesk";
