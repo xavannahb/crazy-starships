@@ -12,7 +12,7 @@ h1.nebulaText {
   color: var(--title-orange);
   position: absolute;
   text-align: center;
-  text-shadow: 0 0 3px var(--background-stars);
+  text-shadow: 2px 2px 3px var(--background-stars);
 }
 
 .nebulaText span {
