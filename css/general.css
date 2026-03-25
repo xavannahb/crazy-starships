@@ -73,7 +73,7 @@
   --background-stars: #fffff0;
   --text-white: #fffff0;
 
---main-margin: 4rem 1rem;
+  --main-margin: 4rem 1rem;
 }
 
 body {
@@ -136,4 +136,8 @@ ul,
 ol {
   font-family: "Space Mono";
   color: var(--text-white);
+}
+
+section + section {
+  margin-top: 128px;
 }
