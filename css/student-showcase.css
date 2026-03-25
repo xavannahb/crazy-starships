@@ -10,32 +10,25 @@ body {
   margin: 0;
 }
 
-section {
+.student-showcase {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  gap: 64px;
-}
-
-h1 {
-  color: white;
+  align-items: center;
 }
 
 .spiral-container {
-  width: calc(min(0.7 * (100vw / 400px), 0.7 * (100vh / 400px)) * 400px);
-  height: calc(min(0.7 * (100vw / 400px), 0.7 * (100vh / 400px)) * 390px);
   display: flex;
   align-items: center;
   justify-content: center;
+  height: calc(min(0.9 * 100vw, 0.9 * 100vh));
+  padding: 64px;
 }
 
 .spiral {
   position: relative;
   width: 400px;
-  scale: calc(min(0.7 * (100vw / 400px), 0.7 * (100vh / 400px)));
+  scale: calc(min(0.9 * (100vw / 400px), 0.9 * (100vh / 390px)));
   overflow: hidden;
-  padding: 32px;
 
   & svg {
     animation: rotate 8s linear infinite;
@@ -58,6 +51,7 @@ h1 {
   background-color: black;
   z-index: 10;
   border-radius: 100%;
+  border: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -70,11 +64,17 @@ h1 {
     0 0 10px black,
     0 0 20px black,
     0 0 30px black;
+
+    view-transition-name: zwart-gat;
 }
+
 
 /* dots */
 .dots {
   position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .dot {
@@ -145,5 +145,52 @@ h1 {
 
   to {
     rotate: 359deg;
+  }
+}
+
+/* MARK: THE ACTIVE ELEMENT 
+*/
+.gets-sucked {
+  position: absolute;
+/*  positionering waar object naartoe gaat eventueel dit als zwart gat in het midden staat:   */
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 1196px);
+	
+	view-transition-class: is-active-sucked;
+
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, img, video {
+  view-transition-name: match-element;
+/* a class because you put it on multiple elements	 */
+  view-transition-class: sucked;
+}
+
+::view-transition-group(zwart-gat) {
+  z-index: 1;
+}
+
+::view-transition-group(.sucked) {
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+::view-transition-old(.is-active-sucked) {
+  display: none;
+}
+
+::view-transition-new(.is-active-sucked) {
+  animation-name: --rotate-scale-out;
+  animation-duration: 1s;
+}
+
+
+@keyframes --rotate-scale-out {
+  from{
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(0);
   }
 }
