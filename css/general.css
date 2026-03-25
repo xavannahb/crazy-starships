@@ -40,6 +40,7 @@ body {
     radial-gradient(var(--background-stars), rgba(255 255 255 / .2) 1px, transparent 5px);
     background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
     background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    height: 100%;
 }
 
 h1 h2 {
@@ -54,6 +55,8 @@ h3 {
 
 p {
     font-family: "Space_Mono";
+    color: var(--background-stars);
 }
+
 
 
