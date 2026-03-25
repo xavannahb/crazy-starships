@@ -95,24 +95,22 @@ function getRandomStudent() {
 document.querySelectorAll(".student .dot:first-of-type").forEach((dot) => {
   const student = getRandomStudent();
 
-  dot.style.backgroundImage = `url(../resources/${student[0]})`;
+  dot.style.backgroundImage = `url(../media/${student[0]})`;
   dot.style.setProperty("--label", `"${student[1]}"`);
 
   dot.addEventListener("animationiteration", () => {
     const student = getRandomStudent();
 
-    dot.style.backgroundImage = `url(../resources/${student[0]})`;
+    dot.style.backgroundImage = `url(../media/${student[0]})`;
     dot.style.setProperty("--label", `"${student[1]}"`);
   });
 });
-
-
 
 // EASTER EGG BLACK HOLE
 // from cyd stumpel
 const zwartGat = document.querySelector(".hole");
 const opslokbaar = Array.from(
-  document.querySelectorAll("h1, h2, h3, h4, h5, h6, p, ul, ol, img, video")
+  document.querySelectorAll("h1, h2, h3, h4, h5, h6, p, ul, ol, img, video"),
 );
 
 const staggerDuration = 1000;
@@ -124,18 +122,18 @@ function shuffle(array) {
 
   // While there remain elements to shuffle...
   while (currentIndex != 0) {
-
     // Pick a remaining element...
     let randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
     // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
+      array[randomIndex],
+      array[currentIndex],
+    ];
   }
 }
 shuffle(opslokbaar);
-
 
 // from cyd stumpel
 if (zwartGat) {
@@ -151,23 +149,23 @@ const animateToBlackHole = (activeElement) => {
       activeElement.classList.add("gets-sucked");
     });
     transition.finished.then(() => {
-      activeElement.remove()
+      activeElement.remove();
       opslokbaar.shift();
       if (opslokbaar.length) {
-        const nextEl = opslokbaar[0]
-        animateToBlackHole(nextEl)
+        const nextEl = opslokbaar[0];
+        animateToBlackHole(nextEl);
       }
     });
   }
 };
 
-let section = document.querySelector('section');
+let section = document.querySelector("section");
 
-let sectionT = section.offsetTop
-let sectionL = section.offsetLeft
+let sectionT = section.offsetTop;
+let sectionL = section.offsetLeft;
 
-let zwartGatT = zwartGat.offsetTop
-let zwartGatL = zwartGat.offsetLeft
+let zwartGatT = zwartGat.offsetTop;
+let zwartGatL = zwartGat.offsetLeft;
 
-console.log('hole: ' + zwartGatT + ', ' + zwartGatL)
-console.log('section: ' + sectionT + ', ' + sectionL)
+console.log("hole: " + zwartGatT + ", " + zwartGatL);
+console.log("section: " + sectionT + ", " + sectionL);
