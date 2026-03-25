@@ -79,6 +79,8 @@ body {
 /* MARK: Tekst mission */
 .text-mission {
   width: 100%;
+  display: flex;
+  flex-direction: column;
   max-width: var(--text-max-width);
   margin-block-start: var(--text-mar-block-start);
   opacity: 0;
@@ -95,21 +97,7 @@ body {
 
 /* MARK: Media query desktop */
 @media (min-width: 760px) {
-  .position {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: var(--gap-desktop);
-    min-height: 100vh;
-  }
-
-  .satellite-move {
-    left: 40%;
-    top: 40%;
-  }
-
   .text-mission {
-    width: 100%;
     max-width: var(--text-max-width);
     margin-block-start: var(--text-mar-blsta--top-desktop);
   }

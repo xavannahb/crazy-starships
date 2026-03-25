@@ -4,6 +4,7 @@
 @import url("mission.css");
 @import url("student-showcase.css");
 @import url("nebula.css");
+@import url("stage.css");
 
 @font-face {
   font-family: "Space Grotesk";
@@ -117,19 +118,22 @@ main {
 
 h1,
 h2 {
-    font-family: "Space Grotesk";
-    color: var(--title-orange);
+  font-family: "Space Grotesk";
+  color: var(--title-orange);
 }
 
 h2 {
-    font-size: 32px;
+  font-size: 32px;
+  margin-bottom: 0;
+  font-size: 3rem;
 }
 
 h3 {
-    font-family: "Roboto";
+  font-family: "Roboto";
 }
-
-p, ol {
-    font-family: "Space Mono";
-    color: var(--text-white);
+p,
+ul,
+ol {
+  font-family: "Space Mono";
+  color: var(--text-white);
 }
