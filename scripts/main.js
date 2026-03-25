@@ -105,3 +105,69 @@ document.querySelectorAll(".student .dot:first-of-type").forEach((dot) => {
     dot.style.setProperty("--label", `"${student[1]}"`);
   });
 });
+
+
+
+// EASTER EGG BLACK HOLE
+// from cyd stumpel
+const zwartGat = document.querySelector(".hole");
+const opslokbaar = Array.from(
+  document.querySelectorAll("h1, h2, h3, h4, h5, h6, p, ul, ol, img, video")
+);
+
+const staggerDuration = 1000;
+
+// from: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+
+function shuffle(array) {
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+}
+shuffle(opslokbaar);
+
+
+// from cyd stumpel
+if (zwartGat) {
+  zwartGat.addEventListener("click", () => {
+    const activeElement = opslokbaar[0];
+    animateToBlackHole(activeElement);
+  });
+}
+
+const animateToBlackHole = (activeElement) => {
+  if (document.startViewTransition) {
+    const transition = document.startViewTransition(() => {
+      activeElement.classList.add("gets-sucked");
+    });
+    transition.finished.then(() => {
+      activeElement.remove()
+      opslokbaar.shift();
+      if (opslokbaar.length) {
+        const nextEl = opslokbaar[0]
+        animateToBlackHole(nextEl)
+      }
+    });
+  }
+};
+
+let section = document.querySelector('section');
+
+let sectionT = section.offsetTop
+let sectionL = section.offsetLeft
+
+let zwartGatT = zwartGat.offsetTop
+let zwartGatL = zwartGat.offsetLeft
+
+console.log('hole: ' + zwartGatT + ', ' + zwartGatL)
+console.log('section: ' + sectionT + ', ' + sectionL)
