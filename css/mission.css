@@ -12,8 +12,6 @@
 
   --upDown-float: -30px;
 
-  --main-margin: 1em;
-
   --text-max-width: 30em;
   --text-mar-block-start: 42vw;
 
@@ -23,10 +21,6 @@
 
 body {
   overflow-x: hidden; /* Alleen verticaal scrollen is mogelijk */
-}
-
-main {
-  margin: var(--main-margin);
 }
 
 /* MARK: positie tekst en afbeelding */
