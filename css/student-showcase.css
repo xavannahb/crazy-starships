@@ -10,21 +10,18 @@ body {
   margin: 0;
 }
 
-section {
+.student-showcase {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-}
-
-h1 {
-  color: white;
+  align-items: center;
 }
 
 .spiral-container {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: calc(min(0.9 * 100vw, 0.9 * 100vh));
+  padding: 64px;
 }
 
 .spiral {
@@ -32,7 +29,6 @@ h1 {
   width: 400px;
   scale: calc(min(0.9 * (100vw / 400px), 0.9 * (100vh / 390px)));
   overflow: hidden;
-  padding: 32px;
 
   & svg {
     animation: rotate 8s linear infinite;
