@@ -1,0 +1,196 @@
+:root {
+  /* TODO remove when in main branch */
+  --star-color: #eb5d34;
+  --trail-color: white;
+  --background-blue: #001329;
+}
+
+body {
+  background-color: var(--background-blue);
+  margin: 0;
+}
+
+.student-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spiral-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(min(0.9 * 100vw, 0.9 * 100vh));
+  padding: 64px;
+}
+
+.spiral {
+  position: relative;
+  width: 400px;
+  scale: calc(min(0.9 * (100vw / 400px), 0.9 * (100vh / 390px)));
+  overflow: hidden;
+
+  & svg {
+    animation: rotate 8s linear infinite;
+  }
+
+  & path {
+    stroke-linecap: "round";
+    stroke-linejoin: "round";
+    stroke-miterlimit: "10";
+    stroke-width: 0.5px;
+    fill: transparent;
+    stroke: rgb(255 255 255 / 0.25);
+    paint-order: "fill stroke markers";
+  }
+}
+
+.hole {
+  width: 20%;
+  height: 20%;
+  background-color: black;
+  z-index: 10;
+  border-radius: 100%;
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:
+    0 0 10px black,
+    0 0 20px black,
+    0 0 30px black;
+
+    view-transition-name: zwart-gat;
+}
+
+
+/* dots */
+.dots {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background-color: var(--trail-color);
+
+  offset-rotate: auto;
+  offset-distance: 0%;
+  animation-name: moveAlong;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+
+  animation-duration: var(--duration, 2000ms);
+  animation-delay: var(--delay, 0s);
+}
+
+.dot:first-of-type {
+  background-color: var(--star-color);
+  box-shadow:
+    0 0 5px var(--star-color),
+    0 0 5px var(--star-color),
+    0 0 5px var(--star-color);
+}
+
+.student .dot {
+  background-color: var(--star-color);
+}
+
+.student .dot:first-of-type {
+  background-image: url(student.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 10;
+  offset-rotate: 0deg;
+
+  &::after {
+    content: var(--label);
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    white-space: nowrap;
+  }
+}
+
+@keyframes moveAlong {
+  0% {
+  }
+
+  80% {
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 359deg;
+  }
+}
+
+/* MARK: THE ACTIVE ELEMENT 
+*/
+.gets-sucked {
+  position: absolute;
+/*  positionering waar object naartoe gaat eventueel dit als zwart gat in het midden staat:   */
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 1196px);
+	
+	view-transition-class: is-active-sucked;
+
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, img, video {
+  view-transition-name: match-element;
+/* a class because you put it on multiple elements	 */
+  view-transition-class: sucked;
+}
+
+::view-transition-group(zwart-gat) {
+  z-index: 1;
+}
+
+::view-transition-group(.sucked) {
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+::view-transition-old(.is-active-sucked) {
+  display: none;
+}
+
+::view-transition-new(.is-active-sucked) {
+  animation-name: --rotate-scale-out;
+  animation-duration: 1s;
+}
+
+
+@keyframes --rotate-scale-out {
+  from{
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(0);
+  }
+}

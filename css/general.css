@@ -1,22 +1,120 @@
 @import url("walle.css");
+@import url("logo.css");
+@import url("mission.css");
+@import url(student-showcase.css);
+
+@font-face {
+  font-family: "Space Grotesk";
+  src:
+    url("../fonts/space-grotesk-latin-400-normal.woff2") format("woff2"),
+    url("../fonts/space-grotesk-latin-400-normal.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src:
+    url("../fonts/space-grotesk-latin-700-normal.woff2") format("woff2"),
+    url("../fonts/space-grotesk-latin-700-normal.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  src:
+    url("../fonts/space-mono-latin-400-normal.woff2") format("woff2"),
+    url("../fonts/space-mono-latin-400-normal.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  src:
+    url("../fonts/space-mono-latin-700-normal.woff2") format("woff2"),
+    url("../fonts/space-mono-latin-700-normal.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src:
+    url("../fonts/roboto-latin-400-normal.woff2") format("woff2"),
+    url("../fonts/roboto-latin-400-normal.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src:
+    url("../fonts/roboto-latin-700-normal.woff2") format("woff2"),
+    url("../fonts/roboto-latin-700-normal.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 :root {
-    /* colors */
-    --background-blue: #001329;
-    --title-orange: #EB5D34;
-    --text-blue: #181932;
-    --headings-blue: #292F6B;
-    --background-stars: #FFFFF0;
+  /* colors */
+  --background-blue: #001329;
+  --title-orange: #eb5d34;
+  --text-blue: #181932;
+  --headings-blue: #292f6b;
+  --background-stars: #fffff0;
 }
 
 body {
-    /* INSPO: https://projects.verou.me/css3patterns/#starry-night */
-    background-color: var(--background-blue);
-    background-image: 
-    radial-gradient(var(--background-stars), rgba(255 255 255 / .2) 1px, transparent 5px),
-    radial-gradient(var(--background-stars), rgba(255 255 255 / .2) 1px, transparent 5px),
-    radial-gradient(var(--background-stars), rgba(255 255 255 / .2) 1px, transparent 5px),
-    radial-gradient(var(--background-stars), rgba(255 255 255 / .2) 1px, transparent 5px);
-    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
-    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+  /* INSPO: https://projects.verou.me/css3patterns/#starry-night */
+  background-color: var(--background-blue);
+  background-image:
+    radial-gradient(
+      var(--background-stars),
+      rgba(255 255 255 / 0.2) 1px,
+      transparent 5px
+    ),
+    radial-gradient(
+      var(--background-stars),
+      rgba(255 255 255 / 0.2) 1px,
+      transparent 5px
+    ),
+    radial-gradient(
+      var(--background-stars),
+      rgba(255 255 255 / 0.2) 1px,
+      transparent 5px
+    ),
+    radial-gradient(
+      var(--background-stars),
+      rgba(255 255 255 / 0.2) 1px,
+      transparent 5px
+    );
+  background-size:
+    550px 550px,
+    350px 350px,
+    250px 250px,
+    150px 150px;
+  background-position:
+    0 0,
+    40px 60px,
+    130px 270px,
+    70px 100px;
+}
+
+h1,
+h2 {
+  font-family: "Space Grotesk";
+}
+
+h3 {
+  font-family: "Roboto";
+}
+
+p {
+  font-family: "Space Mono";
 }
