@@ -1,7 +1,8 @@
 @import url("walle.css");
 @import url("logo.css");
 @import url("mission.css");
-@import url(student-showcase.css);
+@import url("student-showcase.css");
+@import url("nebula.css");
 
 @font-face {
   font-family: "Space Grotesk";
