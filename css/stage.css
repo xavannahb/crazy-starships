@@ -1,0 +1,11 @@
+.internship {
+    width: 100%;
+    max-width: var(--text-max-width);
+    margin-block-start: var(--text-mar-block-start);
+}
+
+.section-internship {
+    display: flex;
+    justify-content: center;
+}
+
