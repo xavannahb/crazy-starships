@@ -122,7 +122,7 @@ document.querySelectorAll(".student .dot:first-of-type").forEach((dot) => {
 const zwartGat = document.querySelector(".hole");
 const opslokbaar = [
 	// TODO: "p" opnieuw toevoegen
-	...document.querySelectorAll("h1, h2, h3, h4, h5, h6, ul, ol, img, video"),
+	...document.querySelectorAll(".into-blackhole"),
 ];
 
 const staggerDuration = 1000;
