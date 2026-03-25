@@ -125,7 +125,8 @@ h3 {
   font-family: "Roboto";
 }
 
-p {
+p,
+ul {
   font-family: "Space Mono";
   color: var(--text-white);
 }

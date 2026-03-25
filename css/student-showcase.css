@@ -65,9 +65,8 @@ body {
     0 0 20px black,
     0 0 30px black;
 
-    view-transition-name: zwart-gat;
+  view-transition-name: zwart-gat;
 }
-
 
 /* dots */
 .dots {
@@ -152,18 +151,27 @@ body {
 */
 .gets-sucked {
   position: absolute;
-/*  positionering waar object naartoe gaat eventueel dit als zwart gat in het midden staat:   */
+  /*  positionering waar object naartoe gaat eventueel dit als zwart gat in het midden staat:   */
   top: 0;
   left: 50%;
   transform: translate(-50%, 1196px);
-	
-	view-transition-class: is-active-sucked;
 
+  view-transition-class: is-active-sucked;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, img, video {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+img,
+video {
   view-transition-name: match-element;
-/* a class because you put it on multiple elements	 */
+  /* a class because you put it on multiple elements	 */
   view-transition-class: sucked;
 }
 
@@ -185,9 +193,8 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, img, video {
   animation-duration: 1s;
 }
 
-
 @keyframes --rotate-scale-out {
-  from{
+  from {
     transform: rotate(0deg) scale(1);
   }
   to {
