@@ -15,7 +15,6 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 64px;
 }
 
 h1 {
@@ -23,8 +22,6 @@ h1 {
 }
 
 .spiral-container {
-  width: calc(min(0.7 * (100vw / 400px), 0.7 * (100vh / 400px)) * 400px);
-  height: calc(min(0.7 * (100vw / 400px), 0.7 * (100vh / 400px)) * 390px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +30,7 @@ h1 {
 .spiral {
   position: relative;
   width: 400px;
-  scale: calc(min(0.7 * (100vw / 400px), 0.7 * (100vh / 400px)));
+  scale: calc(min(0.9 * (100vw / 400px), 0.9 * (100vh / 390px)));
   overflow: hidden;
   padding: 32px;
 
@@ -75,6 +72,9 @@ h1 {
 /* dots */
 .dots {
   position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .dot {
