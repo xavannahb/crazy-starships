@@ -16,9 +16,11 @@
 
 .logo img {
     width: 100%;
-    height: auto;
+    /* height: auto; */
     display: block;
-    opacity: var(--logo-opacity);
+    background-color: #FFFFFFBF;
+    padding: 1rem 1rem 1rem .5rem;
+    border-radius: 99rem;
 }
 
 @keyframes logoRight {
