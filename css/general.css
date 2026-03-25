@@ -1,10 +1,14 @@
+
 :root {
     /* colors */
     --background-blue: #001329;
     --title-orange: #EB5D34;
     --text-blue: #181932;
+    --text-white: #ffffff;
     --headings-blue: #292F6B;
     --background-stars: #FFFFF0;
+
+    /* fonts */
 }
 
 body {
@@ -17,4 +21,5 @@ body {
     radial-gradient(var(--background-stars), rgba(255 255 255 / .2) 1px, transparent 5px);
     background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
     background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+
 }
