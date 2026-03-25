@@ -10,32 +10,25 @@ body {
   margin: 0;
 }
 
-section {
+.student-showcase {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  gap: 64px;
-}
-
-h1 {
-  color: white;
+  align-items: center;
 }
 
 .spiral-container {
-  width: calc(min(0.7 * (100vw / 400px), 0.7 * (100vh / 400px)) * 400px);
-  height: calc(min(0.7 * (100vw / 400px), 0.7 * (100vh / 400px)) * 390px);
   display: flex;
   align-items: center;
   justify-content: center;
+  height: calc(min(0.9 * 100vw, 0.9 * 100vh));
+  padding: 64px;
 }
 
 .spiral {
   position: relative;
   width: 400px;
-  scale: calc(min(0.7 * (100vw / 400px), 0.7 * (100vh / 400px)));
+  scale: calc(min(0.9 * (100vw / 400px), 0.9 * (100vh / 390px)));
   overflow: hidden;
-  padding: 32px;
 
   & svg {
     animation: rotate 8s linear infinite;
@@ -79,6 +72,9 @@ h1 {
 /* dots */
 .dots {
   position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .dot {
