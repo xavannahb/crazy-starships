@@ -82,10 +82,21 @@ paths.forEach((path, k) => {
 });
 
 const studentImages = [
-  ["student1.jpg", "Yoda"],
-  ["student2.jpg", "Spock"],
-  ["student3.jpg", "E.T"],
-  ["student4.jpeg", "Elon Musk"],
+  ["Ahmad.png", "Ahmad"],
+  ["Aksinnia.png", "Aksinnia"],
+  ["Davey.png", "Davey"],
+  ["Eser.png", "Eser"],
+  ["Iris.png", "Iris"],
+  ["Jeffrey.png", "Jeffrey"],
+  ["Khawla.png", "Khawla"],
+  ["Mark.png", "Mark"],
+  ["Matei.png", "Matei"],
+  ["Melissa.png", "Melissa"],
+  ["Merten.png", "Merten"],
+  ["Oscar.png", "Oscar"],
+  ["Sam.png", "Sam"],
+  ["Sander.png", "Sander"],
+  ["Thijs.png", "Thijs"],
 ];
 
 function getRandomStudent() {
@@ -95,13 +106,13 @@ function getRandomStudent() {
 document.querySelectorAll(".student .dot:first-of-type").forEach((dot) => {
   const student = getRandomStudent();
 
-  dot.style.backgroundImage = `url(../media/${student[0]})`;
+  dot.style.backgroundImage = `url(../media/students/${student[0]})`;
   dot.style.setProperty("--label", `"${student[1]}"`);
 
   dot.addEventListener("animationiteration", () => {
     const student = getRandomStudent();
 
-    dot.style.backgroundImage = `url(../media/${student[0]})`;
+    dot.style.backgroundImage = `url(../media/students/${student[0]})`;
     dot.style.setProperty("--label", `"${student[1]}"`);
   });
 });
