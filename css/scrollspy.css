@@ -31,6 +31,7 @@ nav ol {
 		a {
 			text-decoration: none;
 			color: var(--headings-blue);
+      transition: color 1s;
 		}
 	}
 }
