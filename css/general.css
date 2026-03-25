@@ -1,4 +1,5 @@
 @import url("walle.css");
+@import url("scrollspy.css");
 @import url("logo.css");
 @import url("mission.css");
 @import url("student-showcase.css");
@@ -71,6 +72,8 @@
   --headings-blue: #292f6b;
   --background-stars: #fffff0;
   --text-white: #fffff0;
+
+--main-margin: 4rem 1rem;
 }
 
 body {
@@ -109,6 +112,10 @@ body {
     70px 100px;
 }
 
+main {
+  margin: var(--main-margin);
+}
+
 h1,
 h2 {
   font-family: "Space Grotesk";
@@ -124,9 +131,9 @@ h2 {
 h3 {
   font-family: "Roboto";
 }
-
 p,
-ul {
+ul,
+ol {
   font-family: "Space Mono";
   color: var(--text-white);
 }

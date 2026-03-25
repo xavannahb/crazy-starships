@@ -12,6 +12,9 @@
     z-index: 1000;
     animation-name: logoRight;
     animation-timeline: scroll();
+
+    /* to be under nav bar: */
+    top: 4rem;
 }
 
 .logo img {
