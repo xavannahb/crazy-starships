@@ -147,6 +147,7 @@ function shuffle(array) {
 }
 shuffle(opslokbaar);
 
+
 if (zwartGat) {
 	zwartGat.addEventListener("click", () => {
 		const activeElement = opslokbaar[0];
