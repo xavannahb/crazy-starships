@@ -33,3 +33,10 @@
         transform: translateX(calc(100vw - var(--logo-width)));
     }
 }
+
+@media (width > 800px) {
+	.logo {
+		top: 0;
+        margin: .5rem;
+	}
+}
