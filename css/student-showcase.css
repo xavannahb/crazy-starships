@@ -154,8 +154,6 @@ body {
 	/*  positionering waar object naartoe gaat: */
 	top: 0;
 	left: 50%;
-	/* transform-origin: center center; */
-	/* transform: translate(-50%, 1196px); */
 	transform: translate(-50%, -50%);
 
 	view-transition-class: is-active-sucked;
@@ -171,7 +169,7 @@ p,
 ul,
 ol,
 img,
-video {
+details {
 	view-transition-name: match-element;
 	/* a class because you put it on multiple elements	 */
 	view-transition-class: sucked;
