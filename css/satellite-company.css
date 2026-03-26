@@ -2,16 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     width: 100%;
     margin: 0 auto;
     padding: 1rem;
-}
-
-/* div text to center left */
-.company-text {
-    width: 100%;
-    max-width: 600px;
 }
 
 .company-text h2 {
@@ -70,7 +64,7 @@
 /* if details is open */
 .satellite-company details[open] {
     color: var(--headings-blue);
-    width: 220px;
+    width: 250px;
     height: auto;
     border-radius: 15px;
     padding: 1rem;
@@ -90,11 +84,15 @@
     border-radius: 50%;
 }
 
+.satellite-company details[open] p {
+    color: var(--headings-blue);
+}
 /* positions of the details */
 
 .detail-1 {
     top: 12%;
     left: 18%;
+    animation: revealHotspot both;
 }
 
 .detail-2 {
@@ -112,66 +110,36 @@
     right: 30%;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 800px) {
     .satellite-company {
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
         gap: 3rem;
         max-width: 1100px;
-
-        /* dit maakt scroll mogelijk */
-        min-height: 140vh;
+        padding: 3rem 0;
     }
 
     .company-text {
         flex: 1;
         max-width: 500px;
 
-        position: sticky; /* zorgt ervoor dat ze op het op ze plek blijft */
-        top: 0;
-        height: 100vh;
-
         display: flex; 
         flex-direction: column;
         justify-content: center; /* zorgt ervoor dat alle info in het midden gecentreerd blijft */
+    }
+
+    .company-text h2 { 
+        margin-top: 80px
     }
 
     .company-image {
         flex: 1;
         max-width: 500px;
 
-        position: sticky; /* zorgt ervoor dat ze op hun plek blijft */
-        top: 0;
-        height: 100vh;
-
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-
-    .detail-1 {
-        animation: revealHotspot both;
-        animation-timeline: view();
-        animation-range: entry 30% cover 50%;
-    }
-
-    .detail-2 {
-        animation: revealHotspot both;
-        animation-timeline: view();
-        animation-range: entry 40% cover 60%;
-    }
-
-    .detail-3 {
-        animation: revealHotspot both;
-        animation-timeline: view();
-        animation-range: entry 50% cover 70%;
-    }
-
-    .detail-4 {
-        animation: revealHotspot both;
-        animation-timeline: view();
-        animation-range: entry 60% cover 80%;
     }
 }
 
@@ -187,17 +155,5 @@
     }
     100% {
         transform: translateY(0px);
-    }
-}
-
-/* hotspot reveal animation */
-@keyframes revealHotspot {
-    from {
-        opacity: 0;
-        transform: scale(0.8) translateY(20px); /* zorgt ervoor dat de hotspots kleiner beginnen en groter worden */
-    }
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
     }
 }
