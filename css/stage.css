@@ -6,6 +6,7 @@
 .section-internship {
   display: flex;
   justify-content: center;
+  padding: 1rem;
 }
 
 .section-internship a {

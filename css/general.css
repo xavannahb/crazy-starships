@@ -139,6 +139,6 @@ ol {
   color: var(--text-white);
 }
 
-section + section {
+.student-showcase {
   margin-top: 128px;
 }

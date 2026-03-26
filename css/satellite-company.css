@@ -91,6 +91,7 @@
 }
 
 /* positions of the details */
+
 .detail-1 {
     top: 12%;
     left: 18%;
@@ -117,10 +118,10 @@
         align-items: flex-start;
         justify-content: space-between;
         gap: 3rem;
-        max-width: 1200px;
+        max-width: 1100px;
 
         /* dit maakt scroll mogelijk */
-        min-height: 180vh;
+        min-height: 140vh;
     }
 
     .company-text {
