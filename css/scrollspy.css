@@ -43,7 +43,7 @@ h2[id] {
 
 @media (width > 800px) {
 	nav {
-		top: 5rem;
+		top: 6rem;
 		left: unset;
 		right: unset;
 		border-top-right-radius: 0.5rem;
@@ -57,9 +57,5 @@ h2[id] {
 			text-align: left;
 			padding: 0.5rem 0;
 		}
-	}
-
-	.logo {
-		top: 0;
 	}
 }
