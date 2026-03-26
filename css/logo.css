@@ -40,3 +40,16 @@
         margin: .5rem;
 	}
 }
+
+@media (width < 390px) {
+	.logo {
+		top: 0;
+        margin: .5rem;
+	}
+}
+
+@media (width < 485px) {
+	.logo {
+		top: 5.5rem;
+	}
+}

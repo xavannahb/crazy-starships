@@ -59,3 +59,11 @@ h2[id] {
 		}
 	}
 }
+
+@media (width < 390px) {
+	nav {
+		display: none;
+	}
+	
+}
+
