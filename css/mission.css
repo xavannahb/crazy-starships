@@ -1,0 +1,104 @@
+:root {
+  --font-size: clamp(14px, 2.5vw, 18px); /* Schaalt tekst mee met scherm */
+  --line-height: 150%;
+
+  --size-satellite: clamp(120px, 40vw, 300px);
+
+  --satellite-left-top: 20%;
+  --satellite-start: -300px;
+
+  --img-left: 40%;
+  --img-top: 30%;
+
+  --upDown-float: -30px;
+
+  --text-max-width: 800px;
+  --text-mar-block-start: 42vw;
+
+  --gap-desktop: 80px;
+  --text-mar-blsta--top-desktop: 20em;
+}
+
+body {
+  overflow-x: hidden; /* Alleen verticaal scrollen is mogelijk */
+}
+
+/* MARK: positie tekst en afbeelding */
+.position {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* MARK: Satelliet */
+.satellite {
+  position: absolute;
+  top: 0;
+  width: var(--size-satellite);
+  height: var(--size-satellite);
+}
+
+.satellite-move {
+  position: absolute;
+  left: var(--satellite-left-top);
+  top: var(--satellite-left-top);
+  animation: toRight 2s ease forwards;
+}
+
+@keyframes toRight {
+  from {
+    transform: translateX(var(--satellite-start));
+  }
+  to {
+    transform: translateX(
+      10px
+    ); /* 0, zodat de satteliet eindigt op de "normale" plek */
+  }
+}
+
+.satellite-move img {
+  position: absolute;
+  width: var(--size-satellite);
+  left: var(--img-left);
+  top: var(--img-top);
+  animation: upDown 5s ease-in-out infinite;
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(var(--upDown-float));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* MARK: Tekst mission */
+.text-mission {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: var(--text-max-width);
+  margin-block-start: var(--text-mar-block-start);
+  opacity: 0;
+  animation: appear 1s ease forwards;
+  animation-delay: 2s;
+  z-index: 1;
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+/* MARK: Media query desktop */
+@media (min-width: 760px) {
+  .text-mission {
+    max-width: var(--text-max-width);
+    margin-block-start: var(--text-mar-blsta--top-desktop);
+  }
+}

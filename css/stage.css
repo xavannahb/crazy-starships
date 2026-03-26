@@ -1,0 +1,15 @@
+.internship {
+  width: 100%;
+  max-width: var(--text-max-width);
+}
+
+.section-internship {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.section-internship a {
+  color: var(--title-orange);
+  font-weight: bold;
+}
