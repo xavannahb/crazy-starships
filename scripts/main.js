@@ -147,7 +147,6 @@ function shuffle(array) {
 }
 shuffle(opslokbaar);
 
-// from cyd stumpel
 if (zwartGat) {
 	zwartGat.addEventListener("click", () => {
 		const activeElement = opslokbaar[0];
